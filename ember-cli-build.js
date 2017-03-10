@@ -1,10 +1,22 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var nodeSassGlobbing = require('node-sass-globbing');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    babel: {
+      includePolyfill: true
+    },
+
+    autoprefixer: {
+      browsers: ['last 2 version']
+    },
+
+    sassOptions: {
+      importer: nodeSassGlobbing,
+      includePaths: ['app/features']
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
