@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'emberyvr-cli',
+    podModulePrefix: 'emberyvr-cli/features',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
