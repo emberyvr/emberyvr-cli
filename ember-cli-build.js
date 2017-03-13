@@ -1,7 +1,11 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var nodeSassGlobbing = require('node-sass-globbing');
+var postcssNestedAncestors = require('postcss-nested-ancestors');
+var precss = require('precss');
+var postcssShortSpacing = require('postcss-short-spacing');
+var postcssShortPosition = require('postcss-short-position');
+var autoprefixer = require('autoprefixer');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -9,13 +13,25 @@ module.exports = function(defaults) {
       includePolyfill: true
     },
 
-    autoprefixer: {
-      browsers: ['last 2 version']
+    nodeAssets: {
+
     },
 
-    sassOptions: {
-      importer: nodeSassGlobbing,
-      includePaths: ['app/features']
+    postcssOptions: {
+      compile: {
+        plugins: [
+          { module: postcssNestedAncestors },
+          { module: precss },
+          { module: postcssShortSpacing },
+          { module: postcssShortPosition },
+          {
+            module: autoprefixer,
+            options: {
+              browsers: ['last 2 version']
+            }
+          }
+        ]
+      }
     }
   });
 

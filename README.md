@@ -50,3 +50,8 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+## Dependencies
+
+- [Gridlex](http://gridlex.devlint.fr/) for the grid system
+- [Postcss](http://postcss.org/) for pre-processing css. See a list of our used plugins see the `ember-cli-build.js`
