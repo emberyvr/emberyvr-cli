@@ -3,8 +3,6 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var postcssNestedAncestors = require('postcss-nested-ancestors');
 var precss = require('precss');
-var postcssShortSpacing = require('postcss-short-spacing');
-var postcssShortPosition = require('postcss-short-position');
 var autoprefixer = require('autoprefixer');
 
 module.exports = function(defaults) {
@@ -13,17 +11,11 @@ module.exports = function(defaults) {
       includePolyfill: true
     },
 
-    nodeAssets: {
-
-    },
-
     postcssOptions: {
       compile: {
         plugins: [
           { module: postcssNestedAncestors },
           { module: precss },
-          { module: postcssShortSpacing },
-          { module: postcssShortPosition },
           {
             module: autoprefixer,
             options: {
