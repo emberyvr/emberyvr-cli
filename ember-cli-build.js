@@ -11,6 +11,13 @@ module.exports = function(defaults) {
       includePolyfill: true
     },
 
+    dotEnv: {
+      clientAllowedKeys: [
+        'CONTENTFUL_ACCESS_TOKEN',
+        'CONTENTFUL_SPACE'
+      ]
+    },
+
     postcssOptions: {
       compile: {
         plugins: [
