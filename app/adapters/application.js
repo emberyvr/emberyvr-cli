@@ -1,3 +1,8 @@
-import ContentfulAdapter from 'ember-data-contentful/adapters/contentful';
+import DS from 'ember-data';
+const {
+  JSONAPIAdapter
+} = DS;
 
-export default ContentfulAdapter.extend({});
+export default JSONAPIAdapter.extend({
+  namespace: 'api/v1'
+});

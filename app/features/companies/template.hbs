@@ -1,3 +1,5 @@
-{{#each companies as |company|}}
-  {{company.name}}
-{{/each}}
+<div class="container">
+  {{#each companies as |company|}}
+    {{yvr/company-card company=(readonly company)}}
+  {{/each}}
+</div>

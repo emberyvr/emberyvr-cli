@@ -1,14 +1,13 @@
-import Contentful from 'ember-data-contentful/models/contentful';
+import DS from 'ember-data';
 import attr from 'ember-data/attr';
-import {
-  belongsTo,
-  // hasMany
-} from 'ember-data/relationships';
+const {
+  Model
+} = DS;
 
-export default Contentful.extend({
+export default Model.extend({
   description: attr('string'),
   name: attr('string'),
   pathName: attr('string'),
-  
-  logo: belongsTo('contentful-asset'),
+
+  logo: attr('string')
 });

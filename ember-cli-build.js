@@ -1,9 +1,7 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var postcssNestedAncestors = require('postcss-nested-ancestors');
-var precss = require('precss');
-var autoprefixer = require('autoprefixer');
+var nodeSassGlobbing = require('node-sass-globbing');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -18,19 +16,13 @@ module.exports = function(defaults) {
       ]
     },
 
-    postcssOptions: {
-      compile: {
-        plugins: [
-          { module: postcssNestedAncestors },
-          { module: precss },
-          {
-            module: autoprefixer,
-            options: {
-              browsers: ['last 2 version']
-            }
-          }
-        ]
-      }
+    'ember-bootstrap': {
+      bootstrapVersion: 4
+    },
+
+    sassOptions: {
+      importer: nodeSassGlobbing,
+      includePaths: ['node_modules']
     }
   });
 
